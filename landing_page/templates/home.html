@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %} 
+    HOME
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/landing_page.css' %}">   
+{% endblock %}
+
+
+{% block content %}
+    <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="../index.html">El-Djangoista</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="material-icons">person</i> Components
+                        </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                            <a href="../index.html" class="dropdown-item">
+                                <i class="material-icons">layers</i> All Components
+                            </a>
+                            <a href="http://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
+                                <i class="material-icons">content_paste</i> Documentation
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header header-filter" data-parallax="true" style=" background-image: url('/static/img/profile_city.jpg'); ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="title">Your TOEFL Preparation Starts With Us.</h1>
+                    <h4>
+                        Prepare yourself for TOEFL by giving tests on daily basis and evaluate yourself. 
+                        Get analytics for your progress on daily basis.
+                    </h4>
+                    <br>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
+                        <i class="fa fa-play"></i> Watch video
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main main-raised">
+            <div class="container">
+                <div class="section text-center">
+                    <div class="row">
+                        <div class="col-md-8 ml-auto mr-auto">
+                            <h2 class="title">What's TOEFL?</h2>
+                            <h5 class="description">
+                                    The TOEFL is a language test for non-native English speakers, and is commonly used as an entrance exam at universities and graduate schools. Because of this, the TOEFL offers academic English.
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="features">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="info">
+                                    <div class="icon icon-info">
+                                        <i class="material-icons">chat</i>
+                                    </div>
+                                    <h4 class="info-title">Free Chat</h4>
+                                    <p>Chat with us for any queries regarding the TOEFL exam. We will try to provide you answers to your queries 24/7.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="info">
+                                    <div class="icon icon-success">
+                                        <i class="material-icons">verified_user</i>
+                                    </div>
+                                    <h4 class="info-title">Trusted Experts</h4>
+                                    <p>Get access to the insights of TOELF exam through the verified experts.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="info">
+                                    <div class="icon icon-danger">
+                                        <i class="material-icons">assessment</i>
+                                    </div>
+                                    <h4 class="info-title">Practice Flexibility.</h4>
+                                    <p>Practice according to your flexibility and analyze yourself through the scores.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section text-center">
+                    <h2 class="title">TOEFL is for you if:-</h2>
+                    <br>
+                    <div>
+                        <ul>
+                            
+                                <div class="row">
+                                    <div class="col-xs-1 icon icon-success">
+                                        <i class="material-icons check_circle">check_circle</i>
+                                    </div>
+                                    <div class="col-xs-2">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="col-xs-9">
+                                        <h4>Comfortable with computers.</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1 icon icon-success">
+                                            <i class="material-icons check_circle">check_circle</i>
+                                    </div>
+                                    <div class="col-xs-2">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="col-xs-9">
+                                        <h4>Comfortable speaking extemporaneously into a microphone.</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1 icon icon-success">
+                                        <i class="material-icons check_circle">check_circle</i>
+                                    </div>
+                                    <div class="col-xs-2">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="col-xs-9">
+                                        <h4>Can type quickly.</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1 icon icon-success">
+                                        <i class="material-icons check_circle">check_circle</i>
+                                    </div>
+                                    <div class="col-xs-2">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="col-xs-9">
+                                        <h4>Prefer standard American English.</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1 icon icon-success">
+                                        <i class="material-icons check_circle">check_circle</i>
+                                    </div>
+                                    <div class="col-xs-2">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="col-xs-9">
+                                        <h4>Good at answering multiple-choice questions..</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1 icon icon-success">
+                                        <i class="material-icons check_circle">check_circle</i>
+                                    </div>
+                                    <div class="col-xs-2">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="col-xs-9">
+                                        <h4>Easy to take notes from a recording.</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1 icon icon-success">
+                                        <i class="material-icons check_circle">check_circle</i>
+                                    </div>
+                                    <div class="col-xs-2">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="col-xs-9">
+                                        <h4>Authentic English sources I read/listen to/watch are usually intended to inform rather than entertain.</h4>
+                                    </div>
+                                </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section section-contacts">
+                    <div class="row">
+                        <div class="col-md-8 ml-auto mr-auto">
+                            <h2 class="text-center title">TOEFL iBT Test Structure.</h2>
+                            <h4 class="text-center">TOEFL ibt is 4.30 hours long including the check-in. It's divided into four sections "Reading", "Listening", "Speaking", "Writing" and a break of 10 minutes after two sections.</h4>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card card-nav-tabs col-sm-3">
+                            <div class="card-header card-header-primary">
+                                Reading
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="material-icons">alarm</i>
+                                    60-80 minutes
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="material-icons">question_answer</i>
+                                    36- 56 Questions
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="material-icons">description</i>
+                                    3 or 4 passages.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card card-nav-tabs col-sm-3">
+                            <div class="card-header card-header-success">
+                                Listening
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="material-icons">alarm</i>
+                                    60-90 minutes
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="material-icons">question_answer</i>
+                                    34- 51 Questions
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="material-icons">description</i>
+                                    Listen lectures then QnA.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card card-nav-tabs col-sm-3">
+                            <div class="card-header card-header-warning">
+                                Speaking
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="material-icons">alarm</i>
+                                    20 minutes
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="material-icons">question_answer</i>
+                                    6 Tasks
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="material-icons">description</i>
+                                    Express Opinion.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card card-nav-tabs col-sm-3">
+                            <div class="card-header card-header-rose">
+                                Writing
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="material-icons">alarm</i>
+                                    50 minutes
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="material-icons">question_answer</i>
+                                    2 Tasks
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="material-icons">description</i>
+                                    Write essay.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section text-center">
+                    <button class="btn btn-success btn-lg">Start Now</button>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block footer%}
+
+<footer class="footer ">
+    <div class="container">
+        
+    </div>
+</footer>
+
+
+{% endblock %}
