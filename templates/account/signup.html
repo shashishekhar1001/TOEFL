@@ -1,0 +1,56 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% trans "Signup" %}{% endblock %}
+{% block head %}
+  <style>
+    .link {
+      color: #ff9800;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    label{
+      display: none;
+    }
+    .help-block{
+      color: #fff;
+      background-color: #ff9800;
+      /* border-color: #e11b0c;  */
+      border-color: #ff9800; 
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+      <div class="page-header header-filter" data-parallax="true" style=" background-image: url('/static/img/profile_city.jpg'); ">
+        <div class="container text-center card">
+          <div class="card-header card-header-danger">
+            <h4 class="text-center">{% trans "Sign Up" %}</h4>
+          </div>
+            <h4 class="card-title text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}"><span class="link">sign in</span></a>.{% endblocktrans %}</h4>
+    
+            <form method="post" action="{% url 'account_signup' %}">{% csrf_token %}
+                {{ form | crispy }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <div>  
+                  <button type="submit" class="btn btn-danger btn-round btn-lg">{% trans "Sign Up" %} &raquo;</button>
+                </div>
+            </form>
+        </div>
+      </div>
+{% endblock %}
+
+
+{% block footer%}
+<script>
+  $( document ).ready(function() {
+    $("label").removeClass("bmd-label-static");
+    $("label").addClass("bmd-label-floating");
+  });
+</script>
+{% endblock %}

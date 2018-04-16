@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -162,5 +163,8 @@ ACCOUNT_EMAIL_CONFIRMATION_HMAC = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 LOGIN_URL = "/accounts/login/"
 ACCOUNT_USERNAME_REQUIRED = False
+
+# Crispy Settings
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
