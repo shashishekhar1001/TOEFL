@@ -51,23 +51,20 @@
                                 <div class="dropdown-menu dropdown-with-icons">
                                     {% if request.user.is_authenticated %}
                                         <a href="/accounts/password/change/" class="dropdown-item">
-                                            <i class="material-icons">layers</i> Change Password
+                                            <i class="material-icons">build</i> Change Password
                                         </a>
                                         <a href="/accounts/email/" class="dropdown-item">
-                                            <i class="material-icons">layers</i> Change Email
-                                        </a>
-                                        <a href="/accounts/email/" class="dropdown-item">
-                                            <i class="material-icons">layers</i> Verify Email
+                                            <i class="material-icons">account_box</i> Change/Verify Email
                                         </a>
                                         <a href="/accounts/logout/" class="dropdown-item">
-                                            <i class="material-icons">layers</i> Logout
+                                            <i class="material-icons">exit_to_app</i> Logout
                                         </a>
                                     {% else %}
                                         <a href="/accounts/login/" class="dropdown-item">
-                                            <i class="material-icons">layers</i> Login
+                                            <i class="material-icons">fingerprint</i> Login
                                         </a>
                                         <a href="/accounts/signup/" class="dropdown-item">
-                                            <i class="material-icons">layers</i> Sign Up
+                                            <i class="material-icons">portrait</i> Sign Up
                                         </a>
                                     {% endif %}
                                 </div>

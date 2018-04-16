@@ -22,40 +22,43 @@
       /* border-color: #e11b0c;  */
       border-color: #ff9800; 
     }
+    .card{
+      width: 35%;
+    }
   </style>
 {% endblock %}
 
 {% block content %}
 <div class="page-header header-filter" data-parallax="true" style=" background-image: url('/static/img/profile_city.jpg'); ">
+  
   <div class="container text-center card">
-      <div class="card-header card-header-danger">
-        <h4>{% trans "Sign In" %}</h4>
-      </div>
+    <div class="card-header card-header-danger">
+      <h4>{% trans "Sign In" %}</h4>
+    </div>
 
-      {% get_providers as socialaccount_providers %}
+    {% get_providers as socialaccount_providers %}
 
-      {% if socialaccount_providers %}
-      <p class="card-title text-center">{% blocktrans with site.name as site_name %}Please sign in with one
-      of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-      for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+    {% if socialaccount_providers %}
+    <p class="card-title text-center">{% blocktrans with site.name as site_name %}Please sign in with one
+    of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+    for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
-      <div class="socialaccount_ballot">
+    <div class="socialaccount_ballot">
 
-        <ul class="socialaccount_providers">
-          {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-        </ul>
+      <ul class="socialaccount_providers">
+      {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+      </ul>
 
-        <div class="login-or">{% trans 'or' %}</div>
+      <div class="login-or">{% trans 'or' %}</div>
 
-      </div>
+    </div>
 
-      {% include "socialaccount/snippets/login_extra.html" %}
+    {% include "socialaccount/snippets/login_extra.html" %}
 
-      {% else %}
+    {% else %}
       <p class="card-title text-center">{% blocktrans %}If you have not created an account yet, then please
       <a href="{{ signup_url }}"><span class="link">Sign Up</span></a> first.{% endblocktrans %}</p>
-      {% endif %}
-
+    {% endif %}
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form|crispy }}
@@ -65,6 +68,6 @@
         <button class="btn btn-danger btn-round btn-lg" type="submit">{% trans "Sign In" %}</button><br/>
         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>  
       </form>
-    </div>
+  </div>
 </div>
 {% endblock %}

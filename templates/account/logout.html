@@ -2,22 +2,48 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block title %}{% trans "Sign Out" %}{% endblock %}
+{% block head %}
+  <style>
+    .link {
+      color: #ff9800;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    label{
+      display: none;
+    }
+    .help-block{
+      color: #fff;
+      background-color: #ff9800;
+      /* border-color: #e11b0c;  */
+      border-color: #ff9800; 
+    }
+    .card{
+      width: 35%;
+    }
+  </style>
+{% endblock %}
+
 
 {% block content %}
-  <br/><br/><br/><br/><br/><br/><br/><br/>
-  <div class="centered">
-      <h1>{% trans "Sign Out" %}</h1>
+  <div class="page-header header-filter" data-parallax="true" style=" background-image: url('/static/img/profile_city.jpg'); ">
+    <div class="container text-center card">
+        <div class="card-header card-header-danger">  
+          <h4>{% trans "Sign Out" %}</h4>
+        </div>
 
-      <p>{% trans 'Are you sure you want to sign out?' %}</p>
+      <p class="card-title text-center">{% trans 'Are you sure you want to sign out?' %}</p>
 
       <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
         {% endif %}
-        <button class="btn btn-success" type="submit">{% trans 'Sign Out' %}</button>
+        <button class="btn btn-danger btn-round btn-lg" type="submit">{% trans 'Sign Out' %}</button>
       </form>
+    </div>
   </div>
 
 {% endblock %}
