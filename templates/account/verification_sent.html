@@ -2,11 +2,39 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
+{% block title %}{% trans "Verify Email" %}{% endblock %}
+
+{% block head %}
+  <style>
+    .link {
+      color: #ff9800;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    label{
+      display: none;
+    }
+    .help-block{
+      color: #fff;
+      background-color: #ff9800;
+      /* border-color: #e11b0c;  */
+      border-color: #ff9800; 
+    }
+    .card{
+      width: 35%;
+    }
+  </style>
+{% endblock %}
 
 {% block content %}
-    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+<div class="page-header header-filter" data-parallax="true" style=" background-image: url('/static/img/profile_city.jpg'); ">
+    <div class="container text-center card">
+        <div class="card-header card-header-danger">
+            <h4>{% trans "Verify Your E-mail Address" %}</h4>
+        </div>
 
-    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
-
+        <p class="card-title text-center">{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
+    </div>
+</div>
 {% endblock %}

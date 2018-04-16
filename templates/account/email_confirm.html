@@ -3,30 +3,55 @@
 {% load i18n %}
 {% load account %}
 
-{% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
+{% block title %}{% trans "Confirm E-mail Address" %}{% endblock %}
+{% block head %}
+  <style>
+    .link {
+      color: #ff9800;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    label{
+      display: none;
+    }
+    .help-block{
+      color: #fff;
+      background-color: #ff9800;
+      /* border-color: #e11b0c;  */
+      border-color: #ff9800; 
+    }
+    .card{
+      width: 35%;
+    }
+  </style>
+{% endblock %}
 
 
 {% block content %}
-<div class="centered hero2">
-    <h1>{% trans "Confirm E-mail Address" %}</h1>
+<div class="page-header header-filter" data-parallax="true" style=" background-image: url('/static/img/profile_city.jpg'); ">
+    <div class="container text-center card">
+        <div class="card-header card-header-danger">
+            <h4>{% trans "Confirm E-mail Address" %}</h4>
+        </div>
 
-    {% if confirmation %}
+        {% if confirmation %}
 
-    {% user_display confirmation.email_address.user as user_display %}
+        {% user_display confirmation.email_address.user as user_display %}
 
-    <p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for you {{ user_display }}.{% endblocktrans %}</p>
+        <p class="card-title text-center">{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}"><span class="link">{{ email }}</span></a> is an e-mail address for you {{ user_display }}.{% endblocktrans %}</p>
 
-    <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
-    {% csrf_token %}
-        <button class="btn btn-success" type="submit">{% trans 'Confirm' %}</button>
-    </form>
+        <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+        {% csrf_token %}
+            <button class="btn btn-danger btn-round btn-lg" type="submit">{% trans 'Confirm' %}</button>
+        </form>
 
-    {% else %}
+        {% else %}
 
-    {% url 'account_email' as email_url %}
+        {% url 'account_email' as email_url %}
 
-    <p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}</p>
+        <p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}"><span class="link">issue a new e-mail confirmation request</span></a>.{% endblocktrans %}</p>
 
-    {% endif %}
+        {% endif %}
 </div>
 {% endblock %}
