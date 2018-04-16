@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # My Apps
     'landing_page',
+    'Vocabulary',
     
     # Third Party Apps
     'allauth',
