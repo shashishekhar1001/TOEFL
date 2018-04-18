@@ -19,11 +19,23 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+# REST Part
+from Vocabulary import api_views
+from rest_framework import routers
+router = routers.DefaultRouter()
+router.register(r'words', api_views.Word_ViewSet)
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'accounts/', include('allauth.urls')),
     path(r'', include('landing_page.urls')), 
     path(r'vocab/', include('Vocabulary.urls')), 
+
+    # REST URLS
+    path(r'api/', include(router.urls)),
+    path(r'api-auth/', include('rest_framework.urls'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
