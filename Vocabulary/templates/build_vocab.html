@@ -2,14 +2,82 @@
 {% load staticfiles %}
 
 {% block title %} 
-    Vocabulary
+    HOME
 {% endblock %}
 
 {% block head %}
+<style>
+    img{
+        width: 400px;
+        height: 250px;
+    }
+</style>
 {% endblock %}
 
 
 {% block content %}
-<div class="page-header header-filter" data-parallax="true" style=" background-image: url('/static/img/profile_city.jpg'); ">
-</div>
+    <div class="page-header header-filter" data-parallax="true" style=" background-image: url('/static/img/profile_city.jpg'); ">
+        <div class="container">
+            {% for word in words %}
+                
+                    <div class="card text-center" style="width: 20rem;">
+                        <img class="card-img-top" src="/media/{{ word.image_url }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ word }}</h4>
+                            <p class="card-text">{{ word.meaning }}</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                
+            {% endfor %}      
+
+            {% if words.has_other_pages %}
+                <ul class="pagination justify-content-center" style="margin-bottom: 10px;">
+                    {% if words.has_previous %}
+                        <li>
+                            <a href="?page={{ words.previous_page_number }}">
+                                <button class="btn btn-primary btn-round"> PREVIOUS </button>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="disabled">
+                            <button class="btn btn-primary btn-round" disabled> PREVIOUS </button>                            
+                        </li>
+                    {% endif %}
+                    {% for i in words.paginator.page_range %}
+                        {% if words.number == i %}
+                            <li class="active">
+                                <button class="btn btn-primary btn-round">
+                                   {{ i }}
+                                </button>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="?page={{ i }}">
+                                    <button class="btn btn-primary btn-round">
+                                        {{ i }}
+                                    </button>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if words.has_next %}
+                        <li>
+                            <a href="?page={{ words.next_page_number }}">
+                                <button class="btn btn-primary btn-round">
+                                    NEXT
+                                </button>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="disabled">
+                            <button class="btn btn-primary btn-round" disabled>
+                                    NEXT
+                            </button>
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

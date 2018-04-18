@@ -729,3 +729,7 @@
 .flash {
   animation-name: flash;
 }
+
+.check_circle{
+    padding: 10px;
+}
