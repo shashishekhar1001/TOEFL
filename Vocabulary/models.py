@@ -5,6 +5,19 @@ class Word(models.Model):
     word_vocab = models.CharField(max_length=200)
     meaning = models.CharField(max_length=300)
     image_url = models.ImageField(upload_to='word_pics/')
+    CATEGORY_CHOICES = (
+        ('COMMON', 'COMMON'),
+        ('EASY', 'EASY'),
+        ('MEDIUM', 'MEDIUM'),
+        ('MEDIUM 2', 'MEDIUM 2'),
+        ('MEDIUM 3', 'MEDIUM 3'),
+        ('MEDIUM 4', 'MEDIUM 4'),
+        ('HARD', 'HARD'),
+        ('HARD 2', 'HARD 2'),
+        ('HARD 3', 'HARD 3'),
+        ('HARD 4', 'HARD 4'),
+    )
+    category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default='HARD')
 
     def __str__(self):
         return self.word_vocab

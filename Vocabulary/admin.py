@@ -3,7 +3,7 @@ from Vocabulary.models import *
 # Register your models here.
 
 class WordAdmin(admin.ModelAdmin):
-    list_display = ["id", "word_vocab", "meaning", "image_url"]
+    list_display = ["id", "category", "word_vocab", "meaning", "image_url"]
     class Meta:
         model = Word
 
