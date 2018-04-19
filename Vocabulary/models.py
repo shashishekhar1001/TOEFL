@@ -18,6 +18,8 @@ class Word(models.Model):
         ('HARD 4', 'HARD 4'),
     )
     category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default='HARD')
+    example = models.CharField(max_length=300, default="____________")
+    audio = models.FileField(upload_to='audio/', blank=True)
 
     def __str__(self):
         return self.word_vocab
