@@ -1,5 +1,9 @@
 from django.db import models
-
+from django.core.files.base import ContentFile
+from django.core.files import File
+from gtts import gTTS
+from tempfile import TemporaryFile
+import os
 # Create your models here.
 class Word(models.Model):
     word_vocab = models.CharField(max_length=200)
@@ -21,6 +25,15 @@ class Word(models.Model):
     example = models.CharField(max_length=300, default="____________")
     audio = models.FileField(upload_to='audio/', blank=True)
 
+    def save(self, *args, **kwargs):
+        audio = gTTS(text=self.word_vocab, lang='en', slow=True)
+        audio.save(self.word_vocab + '.mp3')
+        f = open(self.word_vocab + '.mp3', 'rb')
+        myfile = File(f)
+        self.audio = myfile
+        super(Word, self).save(*args, **kwargs)
+
+        
     def __str__(self):
         return self.word_vocab
 
