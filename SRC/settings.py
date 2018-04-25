@@ -25,7 +25,7 @@ SECRET_KEY = '6y1nq@8^rjk*-drm=@6$=x%fkzbyr0ixd(+@h*dtszin^0lfk)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shash.pythonanywhere.com', 'localhost']
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'eldjangoista@gmail.com'
 EMAIL_HOST_PASSWORD = 'eldjangoista123'

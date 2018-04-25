@@ -24,6 +24,15 @@ class Word(models.Model):
     category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default='HARD')
     example = models.CharField(max_length=300, default="____________")
     audio = models.FileField(upload_to='audio/', blank=True)
+    EXAM_CHOICES = (
+        ('COMMON', 'COMMON'),
+        ('GRE', 'GRE'),
+        ('GMAT', 'GMAT'),
+        ('IELTS', 'IELTS'),
+        ('TOEFL', 'TOEFL'),      
+    )
+    exam = models.CharField(max_length=10, choices=EXAM_CHOICES, default='COMMON')
+    
 
     def save(self, *args, **kwargs):
         audio = gTTS(text=self.word_vocab, lang='en', slow=True)
